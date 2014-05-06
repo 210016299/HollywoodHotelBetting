@@ -24,10 +24,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *
  * @author boniface
  */
-@Configuration
-@ComponentScan("com.joseph.california")
-@EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.joseph.california.respository")
+@Configuration // annotation that helps configure project to associate with file
+@ComponentScan("com.joseph.california") // tells config which package it applies to
+@EnableTransactionManagement // could be multiple databases - Transactions take place
+@EnableJpaRepositories(basePackages = "com.joseph.california.respository") // look under "California" package for repositories
 public class ConnectionConfig {
 
     @Bean

@@ -31,15 +31,15 @@ public class Horse implements Serializable {
     private String firstname;
     private String lastname;
     private int age;
-    @Column(unique = true)
+    //@Column(unique = true)
     private String sex;
     @Embedded
     private Contact contact;
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name = "horse_id")
     List<Account> accounts;
     @OneToMany
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name = "horse_id")
     List<Club> clubs;
 
     private Horse(Builder builder) {
@@ -106,15 +106,15 @@ public class Horse implements Serializable {
             clubs = value;
             return this;
         }
-        public Builder person(Horse person){
-            id = person.getId();
-            firstname = person.getFirstname();
-            lastname = person.getLastname();
-            age = person.getAge();
-            sex = person.getSex();
-            clubs = person.getClubs();
-            accounts = person.getAccounts();
-            contact = person.getContact();
+        public Builder horse(Horse horse){
+            id = horse.getId();
+            firstname = horse.getFirstname();
+            lastname = horse.getLastname();
+            age = horse.getAge();
+            sex = horse.getSex();
+            clubs = horse.getClubs();
+            accounts = horse.getAccounts();
+            contact = horse.getContact();
             return this;
             
         }
